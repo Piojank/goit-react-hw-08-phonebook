@@ -32,7 +32,7 @@ export const deleteContactOp = createAsyncThunk(
         return thunkAPI.rejectWithValue(serializedError);
       }
       else {
-        throw error; //throw further
+        throw error;
       }
     }
     const flatData = serializeAxiosData(response);
