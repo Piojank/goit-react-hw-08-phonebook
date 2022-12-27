@@ -1,9 +1,9 @@
 import { useSelector, useDispatch } from "react-redux";
 import { useState, useEffect } from "react";
 
-import ContactItem from "../PhonebookListItem";
+import PhonebookListItem from "../PhonebookListItem";
 //import propTypes from "prop-types";
-import styles from "./ContactList.module.css"
+import styles from "./PhonebookList.module.css"
 
 /*import { selectItems } from "../../redux/contacts/items";
 import { selectFilter } from "redux/contacts/filter";
@@ -32,7 +32,7 @@ const ContactList = () => {
         }   
         return () => {
             /*if (promise !== null) {
-               promise.abort(); 
+                promise.abort(); 
             }*/
             //setIsContactFetched(false);
         }
@@ -55,7 +55,7 @@ const ContactList = () => {
                     // console.log(`${contact.name.toLowerCase()} includes ${lowCaseFilter}: ${contact.name.toLowerCase().includes(lowCaseFilter)}`);
                     return (contact.name.toLowerCase().includes(lowCaseFilter) &&
                         <li key={contact.id} className={styles.contact}>
-                            <ContactItem
+                            <PhonebookListItem
                                 name={contact.name}
                                 number={contact.number}
                             />

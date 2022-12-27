@@ -5,7 +5,7 @@
 
 import ContactForm from "../ContactForm";
 import Filter from "../Filter";
-import ContactList from "../ContactList";
+import ContactList from "../PhonebookList";
 
 
 export default function ContactsLayout(props) {
