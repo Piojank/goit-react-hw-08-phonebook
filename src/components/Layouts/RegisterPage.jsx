@@ -27,11 +27,6 @@ export default function RegisterPage(props) {
   async function onFormSubmit(event) {
     event.preventDefault();
 
-    /*if (credentials.password.length < 7) {
-      toast.warn("Password length should be at least 7 symbols for safety reasons. Try something more complex.");
-      return false;
-    }*/
-
     dispatch(registerUserOp(credentials));
 
     setCredentials({ ...INIT_CREDS });
