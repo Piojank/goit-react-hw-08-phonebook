@@ -2,18 +2,13 @@ import { useSelector, useDispatch } from "react-redux";
 import { useState, useEffect } from "react";
 
 import PhonebookListItem from "../PhonebookListItem";
-//import propTypes from "prop-types";
 import styles from "./PhonebookList.module.css"
-
-/*import { selectItems } from "../../redux/contacts/items";
-import { selectFilter } from "redux/contacts/filter";
-import { selectStatus } from "redux/contacts/status";*/
 import { selectItems, selectFilter, selectStatus } from "redux/contacts/contactsSlice";
 
 import { getContactsOp/*, deleteContactOp */} from "redux/contacts/ops";
 import { deleteContactWithFeedback } from "redux/contacts/ops/deleteContactOp";
 
-const ContactList = () => {
+const PhonebookList = () => {
     const [isContactFetched, setIsContactFetched] = useState(false);
 
     const lowCaseFilter = useSelector(selectFilter).toLowerCase();
@@ -72,15 +67,4 @@ const ContactList = () => {
     );
 }
 
-ContactList.propTypes = {
-    // contacts: propTypes.arrayOf(
-    //     propTypes.shape({
-    //         id: propTypes.string.isRequired,
-    //         name: propTypes.string.isRequired,
-    //         number:propTypes.string.isRequired,
-    //     })
-    // ).isRequired,
-    //filter: propTypes.string,
-}
-
-export default ContactList;
+export default PhonebookList;
