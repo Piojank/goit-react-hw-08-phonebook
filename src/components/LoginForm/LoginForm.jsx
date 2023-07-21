@@ -1,9 +1,24 @@
-// import PropTypes from 'prop-types';
+import { useDispatch } from "react-redux";
 import s from "./LoginForm.module.css";
+import { logIn } from "redux/auth/authOperations";
 
 export const LoginForm = () => {
+    const dispatch = useDispatch();
+
+    const handleSubmit = event => {
+        event.preventDefault();
+        const form = event.currentTarget;
+        dispatch(
+            logIn({
+                email: form.elements.email.value,
+                password: form.elements.password.value,
+            })
+        );
+        form.reset();
+    };
+
     return (
-        <form className={s.form}>
+        <form className={s.form} onSubmit={handleSubmit} autoComplete="off">
             <label className={s.label}>
                 <span className={s.text}>Email</span>
                 <input

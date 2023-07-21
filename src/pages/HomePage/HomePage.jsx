@@ -1,6 +1,6 @@
 import s from "./HomePage.module.css";
 
-export const HomePage = () => {
+export default function Home() {
     return (
         <div style={s.container}>
             <h1 style={s.title}>

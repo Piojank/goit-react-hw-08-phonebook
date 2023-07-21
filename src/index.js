@@ -1,24 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { Provider } from 'react-redux';
-import App from './components/App';
-import './index.css';
+import { App } from 'components/App';
 import { BrowserRouter } from 'react-router-dom';
 import { PersistGate } from 'redux-persist/integration/react';
+import { Provider } from 'react-redux';
 import { store, persistor } from './redux/store';
-import { ChakraProvider } from "@chakra-ui/react";
-
+import './index.css';
+import { HelmetProvider } from 'react-helmet-async';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <ChakraProvider>
-    <BrowserRouter >
-      <Provider store={store}>
-        <PersistGate loading={null} persistor={persistor}>
-          <App />
-        </PersistGate>
-      </Provider>
-    </BrowserRouter>
-    </ChakraProvider>
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+        <BrowserRouter basename="/goit-react-hw-08-phonebook">
+          <HelmetProvider>
+            <App />
+          </HelmetProvider>
+        </BrowserRouter>
+      </PersistGate>
+    </Provider>
   </React.StrictMode>
 );

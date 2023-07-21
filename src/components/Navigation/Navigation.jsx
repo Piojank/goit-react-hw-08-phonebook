@@ -1,37 +1,23 @@
-import PropTypes from 'prop-types';
 
 import { NavLink } from 'react-router-dom';
 import s from './Navigation.module.css';
+import { useAuth } from 'hooks/useAuth';
 
-export const Navigation = ({ isAuthenticated }) => {
-    <nav>
-    <ul className={s.list}>
-        <li className={s.item}>
-            <NavLink
-                exact
-                to="/"
-                className={s.link}
-                activeClassName={s['link--active']}
-            >
+export const Navigation = () => {
+    const { isLoggedIn } = useAuth();
+
+    return (
+        <nav>
+            <NavLink className={s.link} to="/">
                 Home
             </NavLink>
-        </li>
-
-    {isAuthenticated && (
-        <li>
-            <NavLink
-                to="/contacts"
-                className={s.link}
-                activeClassName={s['link--active']}
-            >
+            
+        {isLoggedIn && (
+            <NavLink className={s.link} to="/contacts">
                 Contacts
             </NavLink>
-            </li>
         )}
-    </ul>
-    </nav>
+        </nav>
+    )
 };
 
-Navigation.propTypes = {
-    isAuthenticated: PropTypes.bool.isRequired,
-};
