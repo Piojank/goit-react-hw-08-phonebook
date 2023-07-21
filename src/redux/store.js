@@ -10,14 +10,14 @@ import {
     REGISTER,
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
-import contactsReducer from './contacts/contactSlice';
-import filterReducer from './contacts/filterSlice';
+import { contactsReducer } from './contacts/contactSlice';
+import { filterReducer } from './contacts/filterSlice';
 import { authReducer } from './auth/authSlice';
 
 const middleware = [
     ...getDefaultMiddleware({
         serializableCheck: {
-        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+            ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
         },
     }),
 ];

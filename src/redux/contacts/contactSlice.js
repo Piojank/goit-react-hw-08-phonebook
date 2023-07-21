@@ -49,4 +49,4 @@ const contactsSlice = createSlice({
         .addCase(deleteContact.rejected, handleRejected),
 });
 
-export default contactsSlice.reducer;
+export const contactsReducer = contactsSlice.reducer;

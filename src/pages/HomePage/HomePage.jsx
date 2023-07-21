@@ -1,9 +1,9 @@
 import s from "./HomePage.module.css";
 
-export default function Home() {
+export default function HomePage() {
     return (
-        <div style={s.container}>
-            <h1 style={s.title}>
+        <div className={s.container}>
+            <h1 className={s.title}>
                 Contacts manager welcome page{' '}
                 <span role="img" aria-label="Greeting icon">
                     💁‍♀️
