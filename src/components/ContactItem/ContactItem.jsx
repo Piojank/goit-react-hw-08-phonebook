@@ -9,13 +9,16 @@ export const ContactItem = ({ contactItem }) => {
     };
 
     return (
-        <li className={s.item} id={contactItem.id}>
-        <span className={s.name}>{contactItem.name}</span>
-        <a href={`tel:${contactItem.number}`} className={s.number}>
+        <li className={s.list__item} id={contactItem.id}>
+        {`${contactItem.name}:`}
+        <span className={s.list__number}>
             {contactItem.number}
-        </a>
+        </span>
 
-        <button type="button" onClick={del} aria-label="Delete contact">
+        <button className={s.list__btn}
+                type="button" onClick={del} 
+                aria-label="Delete contact"
+        >
             Delete
         </button>
         </li>

@@ -18,6 +18,7 @@
 .list__number{
     font-size: 18px;
     font-weight: normal;
+    margin-left: 20px;
 }
 
 .list__btn {
