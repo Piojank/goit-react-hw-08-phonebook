@@ -19,7 +19,7 @@ export const RegisterForm = () => {
     };
 
     return (
-        <form className={s.form} onSubmit={handleSubmit} autoComplete="off">
+        <form className={s.form} onSubmit={handleSubmit}>
         <label className={s.label}>
             <span className={s.text}>Name</span>
             <input
@@ -29,6 +29,7 @@ export const RegisterForm = () => {
                 aria-label="Input for your name"
                 className={s.input}
                 required
+                autoComplete="off"
             />
         </label>
 
@@ -42,6 +43,7 @@ export const RegisterForm = () => {
             placeholder="Your e-mail"
             aria-label="Input for your Email"
             required
+            autoComplete="off"
         />
         </label>
 
@@ -54,6 +56,7 @@ export const RegisterForm = () => {
                 placeholder="Should be at least 7 characters"
                 aria-label="Input for your password"
                 required
+                autoComplete="off"
             />
         </label>
 
