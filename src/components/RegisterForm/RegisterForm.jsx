@@ -38,6 +38,7 @@ export const RegisterForm = () => {
             type="email"
             name="email"
             className={s.input}
+            pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
             placeholder="Your e-mail"
             aria-label="Input for your Email"
             required

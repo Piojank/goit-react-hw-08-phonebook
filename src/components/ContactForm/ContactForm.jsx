@@ -64,15 +64,14 @@ export const ContactForm = () => {
                     placeholder="Phone number"
                     aria-label="Input for your phone number"
                     className={s.input}
-                    pattern="(\+?( |-|\.)?\d{1,2}( |-|\.)?)?(\(?\d{3}\)?|\d{3})( |-|\.)?(\d{3}( |-|\.)?\d{4})"
-                    title="Номер телефона должен состоять из 11-12 цифр и может содержать цифры, пробелы, тире, пузатые скобки и может начинаться с +"
+                    title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
                     required
                     id={numberInputId}
                 />
             </label>
     
         <div className={s.container}>
-            <button type="submit" className={s.button}>
+            <button type="submit" className={s.btn}>
                 Add contact
             </button>
         </div>

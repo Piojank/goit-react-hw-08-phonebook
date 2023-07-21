@@ -1,24 +1,24 @@
 import axios from "axios";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
-axios.defaults.baseURL = 'https://connections-api.herokuapp.com';
+axios.defaults.baseURL = 'https://goit-task-manager.herokuapp.com/';
 
 
-const setToken = token => {
+const setAuthHeader = token => {
     axios.defaults.headers.common.Authorization = `Bearer ${token}`;
 };
 
 
-const clearToken = () => {
+const clearAuthHeader = () => {
     axios.defaults.headers.common.Authorization = '';
 };
 
 export const register = createAsyncThunk('auth/register', 
     async (credentials, thunkAPI) => {
         try {
-            const { data } = await axios.post('/users/signup', credentials);
-            setToken(data.token);
-            return data;
+            const res = await axios.post('/users/signup', credentials);
+            setAuthHeader(res.data.token);
+            return res.data;
         } catch (error) {
             return thunkAPI.rejectWithValue(error.message);
         }
@@ -28,9 +28,9 @@ export const register = createAsyncThunk('auth/register',
 export const logIn = createAsyncThunk('auth/login', 
     async (credentials, thunkAPI) => {
         try {
-            const { data } = await axios.post('/users/login', credentials);
-            setToken(data.token);
-            return data;
+            const res = await axios.post('/users/login', credentials);
+            setAuthHeader(res.data.token);
+            return res.data;
         } catch (error) {
             return thunkAPI.rejectWithValue(error.message);
         }
@@ -41,7 +41,7 @@ export const logOut = createAsyncThunk('auth/logout',
     async (_, thunkAPI) => {
         try {
             await axios.post('/users/logout');
-            clearToken();
+            clearAuthHeader();
         } catch (error) {
             return thunkAPI.rejectWithValue(error.message);
         }
@@ -59,9 +59,9 @@ export const refreshUser = createAsyncThunk('auth/refresh',
 
         
         try {
-            setToken(persistedToken);
-            const { data } = await axios.get('/users/current');
-            return data;
+            setAuthHeader(persistedToken);
+            const res = await axios.get('/users/me');
+            return res.data;
         } catch (error) {
             return thunkAPI.rejectWithValue(error.message);
         }

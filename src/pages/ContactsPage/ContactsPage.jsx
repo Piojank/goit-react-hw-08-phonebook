@@ -8,6 +8,7 @@ import { Filter } from 'components/Filter/Filter';
 import { ContactsList } from 'components/ContactsList/ContactsList';
 import { Section } from "components/Section/Section";
 import { Notification } from "components/Notification/Notification";
+import { ContactForm } from "components/ContactForm/ContactForm";
 
 const Contacts = () => {
     const contacts = useSelector(selectContacts);
@@ -20,7 +21,7 @@ const Contacts = () => {
     return (
         <div className={s.container}>
             <Section title="Phonebook">
-
+                <ContactForm />
             </Section>
             <Section title="Contacts">
                 {contacts.length > 1 && <Filter /> }
