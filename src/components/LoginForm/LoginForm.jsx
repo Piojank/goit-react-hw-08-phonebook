@@ -28,7 +28,6 @@ export const LoginForm = () => {
                 placeholder="Your e-mail"
                 aria-label="Input for your email"
                 required
-                autoComplete="off"
                 />
             </label>
 
@@ -41,7 +40,6 @@ export const LoginForm = () => {
                 placeholder="Your password"
                 aria-label="Input for your password"
                 required
-                autoComplete="off"
                 />
             </label>
 

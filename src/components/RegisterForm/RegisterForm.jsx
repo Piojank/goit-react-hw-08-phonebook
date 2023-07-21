@@ -29,7 +29,6 @@ export const RegisterForm = () => {
                 aria-label="Input for your name"
                 className={s.input}
                 required
-                autoComplete="off"
             />
         </label>
 
@@ -56,7 +55,6 @@ export const RegisterForm = () => {
                 placeholder="Should be at least 7 characters"
                 aria-label="Input for your password"
                 required
-                autoComplete="off"
             />
         </label>
 
