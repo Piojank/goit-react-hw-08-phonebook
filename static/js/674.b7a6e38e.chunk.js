@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkgoit_react_hw_08_phonebook=self.webpackChunkgoit_react_hw_08_phonebook||[]).push([[674],{8674:function(e,n,a){a.r(n),a.d(n,{default:function(){return r}});var o="HomePage_container__uNu-e",t="HomePage_title__UFLA3",c=a(184);function r(){return(0,c.jsx)("div",{className:o,children:(0,c.jsxs)("h1",{className:t,children:["Contacts manager welcome page"," ",(0,c.jsx)("span",{role:"img","aria-label":"Greeting icon",children:"\ud83d\udc81\u200d\u2640\ufe0f"})]})})}}}]);
+//# sourceMappingURL=674.b7a6e38e.chunk.js.map
