@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import s from "./NotFoundPage.module.css";
 
-export const NotFoundPage = () => {
+export default function NotFoundPage() {
     return (
         <div>
             <h2 className={s.title}>404 Page not found!</h2>

@@ -23,27 +23,27 @@ const contactsSlice = createSlice({
     reducers: {},
 
     extraReducers: builder =>
-        builder
-
+    builder
+    
         .addCase(fetchContacts.pending, handlePending)
         .addCase(fetchContacts.fulfilled, (state, action) => {
             state.items = action.payload;
             state.isLoading = false;
         })
         .addCase(fetchContacts.rejected, handleRejected)
-
+        
         .addCase(addContact.pending, handlePending)
         .addCase(addContact.fulfilled, (state, action) => {
             state.isLoading = false;
             state.items.push(action.payload);
         })
         .addCase(addContact.rejected, handleRejected)
-
+    
         .addCase(deleteContact.pending, handlePending)
         .addCase(deleteContact.fulfilled, (state, action) => {
             state.isLoading = false;
             state.items = state.items.filter(
-                contact => contact.id !== action.payload
+            contact => contact.id !== action.payload
             );
         })
         .addCase(deleteContact.rejected, handleRejected),
